@@ -10,14 +10,14 @@ import Router from './Router';
 class App extends Component {
 	componentWillMount(){
 		const config = {
-			apiKey: "AIzaSyAbGdECAaQ-oOL8EofqgfWpmTMVdE3eMPY",
-			authDomain: "employees-58fd5.firebaseapp.com",
-			databaseURL: "https://employees-58fd5.firebaseio.com",
-			projectId: "employees-58fd5",
-			storageBucket: "employees-58fd5.appspot.com",
-			messagingSenderId: "224213401870"
-		};
-		firebase.initializeApp(config);
+    apiKey: "AIzaSyBo632mq4TqzMYOWFpWUcwdU1tTO0XR3X8",
+    authDomain: "skatespots-3a8f0.firebaseapp.com",
+    databaseURL: "https://skatespots-3a8f0.firebaseio.com",
+    projectId: "skatespots-3a8f0",
+    storageBucket: "",
+    messagingSenderId: "233353418469"
+  };
+  firebase.initializeApp(config);
 }
 	
 	render() {

@@ -16,14 +16,17 @@ export const employeeUpdate = ({ prop, value }) => {
 };
 
 
-export const employeeCreate = ({ name, phone, shift }) => {
+//export const employeeCreate = ({ name, phone, shift }) => {
+export const employeeCreate = ({ name, zip, state_abbr }) => {
 	const { currentUser } = firebase.auth();
 	console.log(currentUser);
-	console.log(name, phone, shift);
+	//console.log(name, phone, shift);
+	console.log(name, zip, state_abbr);
 
+			//.push({ name, phone, shift })
 	return (dispatch) => {
 		firebase.database().ref(`/users/${currentUser.uid}/employees`)
-			.push({ name, phone, shift })
+			.push({ name, zip, state_abbr })
 			.then(() => {
 				dispatch({ type: EMPLOYEE_CREATE });
 				Actions.main({ type: 'reset' });
@@ -44,12 +47,14 @@ export const employeesFetch = () => {
 };
 
 
-export const employeeSave = ({ name, phone, shift, uid }) => {
+//export const employeeSave = ({ name, phone, shift, uid }) => {
+export const employeeSave = ({ name, zip, state_abbr, uid }) => {
 	const { currentUser } = firebase.auth();
 
+			//.set({ name, phone, shift })
 	return (dispatch) => {
 		firebase.database().ref(`/users/${currentUser.uid}/employees/${uid}`)	
-			.set({ name, phone, shift })
+			.set({ name, zip, state_abbr })
 			.then(() => {
 				dispatch({ type: EMPLOYEE_SAVE_SUCCESS });
 				Actions.main({ type: 'reset' });

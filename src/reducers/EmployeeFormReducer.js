@@ -4,10 +4,16 @@ import {
 	EMPLOYEE_SAVE_SUCCESS
 } from '../actions/types';
 
-const INITIAL_STATE = {
+/*const INITIAL_STATE = {
 	name: '',
 	phone: '',
 	shift: ''
+};*/
+
+const INITIAL_STATE = {
+	name: '',
+	zip: '',
+	state_abbr: ''
 };
 
 export default (state = INITIAL_STATE, action) => {
